@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         )
       ),
+      floatingActionButtonLocation:  FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.add_circle_rounded
