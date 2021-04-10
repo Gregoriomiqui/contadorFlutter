@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class ContadorPage extends StatefulWidget {
+  
+  @override
+  createState() => _ContadorPageState();
+  
+}
 
-  final estiloTexto = new TextStyle(fontSize: 25.0);
+class _ContadorPageState extends State<ContadorPage> {
 
-  int conteo = 1;
+  final _estiloTexto = new TextStyle(fontSize: 25.0);
+
+  int _conteo = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contador'),
+        title: Text('Contador stateeful'),
         centerTitle: true,
         elevation: 1.0,
       ),
       body: Center(
         child: Column(
           children: [
-            Text('Numero de clicks:', style: estiloTexto,),
-             Text( '$conteo' , style: estiloTexto,),
+            Text('Numero de Taps:', style: _estiloTexto,),
+             Text( '$_conteo' , style: _estiloTexto,),
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         )
@@ -27,9 +34,12 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add_circle_rounded),
         onPressed: () {
-          conteo++;
+          setState((){
+            _conteo++;
+          });
         },
       )
     );
   }
+  
 }
